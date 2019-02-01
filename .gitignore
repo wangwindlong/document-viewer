@@ -3,6 +3,8 @@ bin
 gen
 obj
 document-viewer/libs/*/*.so
+document-viewer/release
+document-viewer/debug
 lint.xml
 local.properties
 release.properties
@@ -29,3 +31,5 @@ pom.xml.*
 #IntelliJ IDEA
 .idea
 *.iml
+release
+debug

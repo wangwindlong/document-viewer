@@ -4,6 +4,7 @@ import org.sufficientlysecure.viewer.R;
 import org.ebookdroid.common.settings.LibSettings;
 import org.ebookdroid.common.settings.SettingsManager;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -84,7 +85,7 @@ public class BrowserAdapter extends BaseAdapter implements Comparator<File> {
         this.currentDirectory = currentDirectory;
 
         final File[] files = currentDirectory.listFiles(filter);
-
+//        Log.d("wangyl", "setCurrentDirectory currentDirectory="+currentDirectory+",files=" + (files== null ? 0 : files.length));
         if (LengthUtils.isNotEmpty(files)) {
             Arrays.sort(files, this);
         }

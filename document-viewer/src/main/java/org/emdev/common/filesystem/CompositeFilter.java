@@ -1,5 +1,7 @@
 package org.emdev.common.filesystem;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.FileFilter;
 
@@ -20,14 +22,15 @@ public class CompositeFilter implements FileFilter {
         if (acceptAll) {
             res = true;
             for (final FileFilter f : fileFilters) {
-                res &= f.accept(file);
+                res = res && f.accept(file);
                 if (!res) {
                     break;
                 }
             }
         } else {
             for (final FileFilter f : fileFilters) {
-                res |= f.accept(file);
+                boolean accept = f.accept(file);
+                res = res || accept;
                 if (res) {
                     break;
                 }
